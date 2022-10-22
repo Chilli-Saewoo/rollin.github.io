@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 function TextInput(props){
     return <StyledInput     
     padding={props.padding} 
