@@ -1,8 +1,7 @@
 import Button from "../components/Button";
 import TextInput from "../components/TextInput";
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
 
 const WritePage = () => {
   return (
