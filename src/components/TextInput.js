@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 function TextInput(props){
     return <StyledInput     
     padding={props.padding} 
@@ -29,6 +28,7 @@ const StyledInput = styled.textarea`
   //margin : ${props => props.margin};
   margin : 0 auto;
   display : block;
+  maxLength={100}
   margin-top : ${props => props.marginTop};
   margin-left : ${props => props.marginLeft};
   margin-right : ${props => props.marginRight};
