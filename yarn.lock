@@ -4934,7 +4934,7 @@ find-up@^5.0.0:
 
 firebase@^9.12.1:
   version "9.12.1"
-  resolved "https://registry.npmjs.org/firebase/-/firebase-9.12.1.tgz"
+  resolved "https://registry.yarnpkg.com/firebase/-/firebase-9.12.1.tgz#f2ef2560a3a122bcf82dee09d5ae3a3805bb890a"
   integrity sha512-sBp4rvkCC7TUnGeneRNs6GVcajO+iSXmYjxqXN4FsrBzldJ5/AOnDXf4bi9OUZtQSl+EHDgUWShBieht15ijgQ==
   dependencies:
     "@firebase/analytics" "0.8.3"
@@ -5301,6 +5301,13 @@ he@^1.2.0:
 hoist-non-react-statics@^3.0.0:
   version "3.3.2"
   resolved "https://registry.npmjs.org/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz"
+  integrity sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==
+  dependencies:
+    react-is "^16.7.0"
+
+hoist-non-react-statics@^3.3.2:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
   integrity sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==
   dependencies:
     react-is "^16.7.0"
