@@ -66,6 +66,26 @@ export class WritePage extends React.Component {
         sticker.classList.add("isShown")
         sticker.classList.remove("isHidden")
         
+        const stickerTextarea = document.querySelector("textarea")
+        const fromTextContainer = document.querySelector(".fromContainer")
+        if (target.id =="pumpkinOrange" || target.id =="pumpkinPurple") {
+            stickerTextarea.setAttribute("style", "top: -345px")
+            fromTextContainer.setAttribute("style", "top: -345px")
+        } else if (target.id == "batOrange" || target.id == "batPurple") {
+            stickerTextarea.setAttribute("style", "top: -290px")
+            fromTextContainer.setAttribute("style", "top: -290px")
+        } else if (target.id == "carriageOrange" || target.id == "carriagePurple") {
+            stickerTextarea.setAttribute("style", "top: -280px")
+            stickerTextarea.style.width = "66%";
+            stickerTextarea.style.fontSize = '1.2em';
+            fromTextContainer.setAttribute("style", "top: -290px")
+        } else if (target.id == "ghostOrange" || target.id == "ghostPurple") {
+            stickerTextarea.setAttribute("style", "top: -280px")
+            fromTextContainer.setAttribute("style", "top: -280px")
+        } else if (target.id == "skullOrange" || target.id == "skullPurple") {
+            stickerTextarea.setAttribute("style", "top: -227px")
+            fromTextContainer.setAttribute("style", "top: -243px")
+        }
       };
 
         return (

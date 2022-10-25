@@ -18,7 +18,7 @@ textarea {
     left: 14%; 
     margin-top: 12px; 
     width: 70%; 
-    height: 200px; 
+    height: 180px; 
     background: transparent; 
     border: 0;
     font-size: 1.25em; 
@@ -78,7 +78,7 @@ input:focus {
 
 .fromBody {
     margin-top: 0;
-    width: 52%;
+    width: 46%;
     height: 20px;
     background: transparent;
     border: 0;
