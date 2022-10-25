@@ -70,12 +70,8 @@ export class WritePage extends React.Component {
 
         return (
             <div class='container'>
-                <p style={{
-                    fontSize: '24px'
-                }}>To. 니쿠니쿠닉</p>
-                <p style={{
-                    marginTop: '24px'
-                }}>작성할 롤링페이퍼의 스티커를 선택해주세요</p>
+                <p class="title">To. 니쿠니쿠닉</p>
+                <p class="titleToSelect">작성할 롤링페이퍼의 스티커를 선택해주세요</p>
                 <div className="tags">
                     <div id="pumpkinOrange" className="tag selected"><img src={pumpkinOrange} class="sticker" onClick={clickSticker} /></div>
                     <div id="batOrange" className="tag notSelected"><img src={batOrange} class="sticker" onClick={clickSticker} /></div>
@@ -86,11 +82,9 @@ export class WritePage extends React.Component {
                     <div id="batPurple" className="tag notSelected"><img src={carriagePurple} class="sticker" onClick={clickSticker} /></div>
                     <div id="carriagePurple" className="tag notSelected"><img src={ghostPurple} class="sticker" onClick={clickSticker} /></div>
                     <div id="ghostPurple" className="tag notSelected"><img src={pumpkinPurple} class="sticker" onClick={clickSticker} /></div>
-                    <div id="skullPurple" className="tag notSelected"><img src={skullPurple} class="sticker" onClick={clickSticker} /></div>
+                    <div id="skullPurple" className="tag notSelected"><img src={skullPurple} class="sticker lastSticker" onClick={clickSticker} /></div>
                 </div>
-                <p style={{
-                    marginTop: '0px'
-                }}> 스티커에 적을 말을 작성해주세요</p>
+                <p class="titleToWrite"> 스티커에 적을 말을 작성해주세요</p>
                 <img id="pumpkinOrangeSticker_TextArea" class="sticker_TextArea isShown" src={pumpkinBackOrange}></img>
                 <img id="batOrangeSticker_TextArea" class="sticker_TextArea isHidden" src={batBackOrange}></img>
                 <img id="carriageOrangeSticker_TextArea" class="sticker_TextArea isHidden" src={carriageBackOrange}></img>
