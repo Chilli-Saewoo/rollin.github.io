@@ -98,10 +98,10 @@ export class WritePage extends React.Component {
                     <div id="carriageOrange" className="tag notSelected"><img src={carriageOrange} class="sticker" onClick={clickSticker} /></div>
                     <div id="ghostOrange" className="tag notSelected"><img src={ghostOrange} class="sticker" onClick={clickSticker} /></div>
                     <div id="skullOrange" className="tag notSelected"><img src={skullOrange} class="sticker" onClick={clickSticker} /></div>
-                    <div id="pumpkinPurple" className="tag notSelected"><img src={batPurple} class="sticker" onClick={clickSticker} /></div>
-                    <div id="batPurple" className="tag notSelected"><img src={carriagePurple} class="sticker" onClick={clickSticker} /></div>
-                    <div id="carriagePurple" className="tag notSelected"><img src={ghostPurple} class="sticker" onClick={clickSticker} /></div>
-                    <div id="ghostPurple" className="tag notSelected"><img src={pumpkinPurple} class="sticker" onClick={clickSticker} /></div>
+                    <div id="pumpkinPurple" className="tag notSelected"><img src={pumpkinPurple} class="sticker" onClick={clickSticker} /></div>
+                    <div id="batPurple" className="tag notSelected"><img src={batPurple} class="sticker" onClick={clickSticker} /></div>
+                    <div id="carriagePurple" className="tag notSelected"><img src={carriagePurple} class="sticker" onClick={clickSticker} /></div>
+                    <div id="ghostPurple" className="tag notSelected"><img src={ghostPurple} class="sticker" onClick={clickSticker} /></div>
                     <div id="skullPurple" className="tag notSelected"><img src={skullPurple} class="sticker lastSticker" onClick={clickSticker} /></div>
                 </div>
                 <p class="titleToWrite"> 스티커에 적을 말을 작성해주세요</p>
