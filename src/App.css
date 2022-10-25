@@ -21,3 +21,6 @@ input:focus {
 .isHidden {
     display: none;
 }
+
+.isShown {
+}

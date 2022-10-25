@@ -73,7 +73,7 @@ export class WritePage extends React.Component {
       };
 
         return (
-            <div padding='24px'>
+            <div style={{maxWidth: '100%', overflowX: 'hidden'}}>
                 <p style={{
                     fontSize: '24px'
                 }}>To. 니쿠니쿠닉</p>
