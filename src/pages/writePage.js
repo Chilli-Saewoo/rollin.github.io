@@ -96,15 +96,6 @@ export class WritePage extends React.Component {
         current.value = stickerTextarea.value.length
       };
 
-    //   const typeText = () => {
-    //     const stickerTextarea = document.querySelector("textarea")
-    //     var characterCount = stickerTextarea.value.length;
-    //     var current = document.querySelector('#current');
-    //     console.log(current.value)
-    //     console.log("keyup!!")
-    //   }
-
-
         return (
             <div class='container'>
                 <p class="title">To. 니쿠니쿠닉</p>
@@ -140,7 +131,7 @@ export class WritePage extends React.Component {
                 <img id="skullPurpleSticker_TextArea" class="sticker_TextArea isHidden" src={skullBackPurple}></img>
 
                 <div style={{display: 'table', margin: 'auto', width: '100%'}}>
-                    <textarea maxLength={100} type='text' id='sender' placeholder="내용을 입력해 주세요" value={this.state.message} onChange = {e => {this.setState({message: e.target.value});}} onKeyDown = {calcText} onKeyUp = {calcText}/>
+                    <textarea maxLength={100} type='text' id='sender' value={this.state.message} onChange = {e => {this.setState({message: e.target.value});}} onKeyDown = {calcText} onKeyUp = {calcText}/>
                     <div class='fromContainer'>
                         <p class='fromTitle'>From.</p>
                         <input class='fromBody' type='text' id='sender' value={this.state.sender} onChange = {e => {this.setState({sender: e.target.value});}}/>
