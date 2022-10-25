@@ -1,6 +1,7 @@
 import React from 'react';
 
 const SendPage = () => {
+    
   return (
     <div>
     <h1>완료</h1>

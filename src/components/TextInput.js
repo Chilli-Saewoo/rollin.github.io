@@ -16,6 +16,7 @@ function TextInput(props){
     fontWeight={props.fontWeight}
     border={props.border}
     radius={props.radius}
+    onClick={props.onClick}
 
     >{props.title}</StyledInput>
 }
@@ -38,6 +39,7 @@ const StyledInput = styled.textarea`
   font-weight: ${props => props.fontWeight};
   border: ${props => props.border};
   border-radius: ${props => props.radius};
+  onClick: ${(props) => props.onClick };
 
   font-family: "Noto Sans KR", sans-serif;
   
