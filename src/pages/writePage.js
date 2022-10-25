@@ -92,7 +92,8 @@ export class WritePage extends React.Component {
                     </div>
                 </div>
                 <Link to="/send">
-                    <button id = "addBtn" onClick={this.interface} style = {{ title: '완료', padding:'0px', width:'100%', height:'56px', background:'#FF7242', marginTop:'22px', textize: '50px', textColor: '#000000', fontWeight: 'bold', border: '0px', radius: '8px'}}>완료</button>
+                    <button id = "addBtn" onClick={this.interface} style = {{position: 'relative', top: '-250px', title: '완료', padding:'0px', width:'100%', height:'56px', background:'#FF7242', 
+                    marginTop:'22px', fontSize: '1em', textColor: '#000000', fontWeight: 'bold', border: '0px', borderRadius: '8px'}}>완료</button>
                 </Link>
             </div>
         )
