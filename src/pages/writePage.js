@@ -4,9 +4,19 @@ import { ref, set, get, update, remove, child } from "firebase/database";
 import { Link } from 'react-router-dom';
 import TextInput from "../components/TextInput";
 import styledComponents from "styled-components";
-import sticker from '../img/sticker.png';
+import batOrange from '../img/batOrange.png';
+import batPurple from '../img/batPurple.png';
+import carriageOrange from '../img/carriageOrange.png';
+import carriagePurple from '../img/carriagePurple.png';
+import ghostOrange from '../img/ghostOrange.png';
+import ghostPurple from '../img/ghostPurple.png';
+import pumpkinOrange from '../img/pumpkinOrange.png';
+import pumpkinPurple from '../img/pumpkinPurple.png';
+import skullOrange from '../img/skullOrange.png';
+import skullPurple from '../img/skullPurple.png';
 import uuid from "react-uuid";
 import qs from "query-string";
+import HorizontalScroll from 'react-scroll-horizontal';
 
 
 export class WritePage extends React.Component {
@@ -31,6 +41,8 @@ export class WritePage extends React.Component {
     }
 
     render() {
+      const parent  = { width: '100%', height: '100px', padding: '12px 0 0 0'}
+      const child = { width: '100%', height: '100px', padding: '0 4px 0 0'}
         return (
             <div padding='24px'>
                 <p style={{
@@ -39,17 +51,19 @@ export class WritePage extends React.Component {
                 <p style={{
                     marginTop: '24px'
                 }}>작성할 롤링페이퍼의 스티커를 선택해주세요</p>
-                <div style={{
-                    display: 'flex'
-                }}>
-                    <img src={sticker} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} />
-                    <img src={sticker} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} />
-                    <img src={sticker} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} />
-                    <img src={sticker} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} />
-                    <img src={sticker} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} />
-                    <img src={sticker} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} />
-                    <img src={sticker} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} />
-                    <img src={sticker} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} />
+                <div id='scroll-horizontal' style={parent}>
+                  <HorizontalScroll>
+                    <div style={child}><img src={batOrange} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} /></div>
+                    <div style={child}><img src={carriageOrange} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} /></div>
+                    <div style={child}><img src={ghostOrange} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} /></div>
+                    <div style={child}><img src={pumpkinOrange} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} /></div>
+                    <div style={child}><img src={skullOrange} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} /></div>
+                    <div style={child}><img src={batPurple} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} /></div>
+                    <div style={child}><img src={carriagePurple} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} /></div>
+                    <div style={child}><img src={ghostPurple} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} /></div>
+                    <div style={child}><img src={pumpkinPurple} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} /></div>
+                    <div style={child}><img src={skullPurple} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} /></div>
+                  </HorizontalScroll>
                 </div>
                 <p style={{
                     marginTop: '36px'
