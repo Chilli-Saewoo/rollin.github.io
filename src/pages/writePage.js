@@ -17,6 +17,7 @@ import skullPurple from '../img/skullPurple.png';
 import uuid from "react-uuid";
 import qs from "query-string";
 import HorizontalScroll from 'react-scroll-horizontal';
+import styles from '../App.css';
 
 
 export class WritePage extends React.Component {
@@ -43,6 +44,16 @@ export class WritePage extends React.Component {
     render() {
       const parent  = { width: '100%', height: '100px', padding: '12px 0 0 0'}
       const child = { width: '100%', height: '100px', padding: '0 4px 0 0'}
+
+      const clickSticker = event => {
+        const active = document.querySelector(".selected");
+        active.classList.remove("selected");
+        active.classList.add("notSelected")
+        const target = event.target.nodeName === "IMAGE" ? event.target : event.target.parentNode;
+        target.classList.add("selected");
+        target.classList.remove("notSelected");
+      };
+
         return (
             <div padding='24px'>
                 <p style={{
@@ -51,18 +62,18 @@ export class WritePage extends React.Component {
                 <p style={{
                     marginTop: '24px'
                 }}>작성할 롤링페이퍼의 스티커를 선택해주세요</p>
-                <div id='scroll-horizontal' style={parent}>
+                <div style={parent}>
                   <HorizontalScroll>
-                    <div style={child}><img src={batOrange} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} /></div>
-                    <div style={child}><img src={carriageOrange} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} /></div>
-                    <div style={child}><img src={ghostOrange} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} /></div>
-                    <div style={child}><img src={pumpkinOrange} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} /></div>
-                    <div style={child}><img src={skullOrange} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} /></div>
-                    <div style={child}><img src={batPurple} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} /></div>
-                    <div style={child}><img src={carriagePurple} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} /></div>
-                    <div style={child}><img src={ghostPurple} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} /></div>
-                    <div style={child}><img src={pumpkinPurple} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} /></div>
-                    <div style={child}><img src={skullPurple} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} /></div>
+                    <div class="selected" style={child}><img src={batOrange} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div className="notSelected" style={child}><img src={carriageOrange} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div className="notSelected" style={child}><img src={ghostOrange} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div className="notSelected" style={child}><img src={pumpkinOrange} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div className="notSelected" style={child}><img src={skullOrange} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div className="notSelected" style={child}><img src={batPurple} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div className="notSelected" style={child}><img src={carriagePurple} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div className="notSelected" style={child}><img src={ghostPurple} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div className="notSelected" style={child}><img src={pumpkinPurple} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div className="notSelected" style={child}><img src={skullPurple} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} onClick={clickSticker} /></div>
                   </HorizontalScroll>
                 </div>
                 <p style={{
@@ -70,10 +81,9 @@ export class WritePage extends React.Component {
                 }}> 스티커에 적을 말을 작성해주세요</p>
 
                 <input type='text' id='sender' value={this.state.message} onChange = {e => {this.setState({message: e.target.value});}}
-                style={{ marginTop: '12px', width: '100%', height: '300px', marginTop: '12px',  background: '#ff7242', border: '2px solid white'}}/>
-                <br></br>
+                style={{ marginTop: '12px',width: '100%', height: '300px',  background: '#ff7242', border: '2px solid white'}}/>
                 <input type='text' id='sender' value={this.state.sender} onChange = {e => {this.setState({sender: e.target.value});}}
-                style={{ marginTop: '12px', width: '100%', height: '20px', marginTop: '0px',  background: '#ff7242', border: '2px solid white'}}/>
+                style={{ marginTop: '0px', width: '100%', height: '20px',  background: '#ff7242', border: '2px solid white'}}/>
                 <Link to="/send">
                     <button id = "addBtn" onClick={this.interface} style = {{ title: '완료', padding:'0px',width:'100%',height:'56px' , background:'#FF7242', marginTop:'22px',
                      textSize: '16px', textColor: '#ffffff', fontWeight: 'bold', border: '0px', radius: '8px'
