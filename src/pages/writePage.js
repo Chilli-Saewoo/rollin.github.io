@@ -27,8 +27,6 @@ import skullBackPurple from '../img/skullBackPurple.png';
 
 import uuid from "react-uuid";
 import qs from "query-string";
-import HorizontalScroll from 'react-scroll-horizontal';
-import styles from '../App.css';
 
 
 export class WritePage extends React.Component {
@@ -80,19 +78,17 @@ export class WritePage extends React.Component {
                 <p style={{
                     marginTop: '24px'
                 }}>작성할 롤링페이퍼의 스티커를 선택해주세요</p>
-                <div style={parent}>
-                  <HorizontalScroll>
-                    <div id="pumpkinOrange" className="selected" style={child}><img src={pumpkinOrange} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div id="batOrange" className="notSelected" style={child}><img src={batOrange} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div id="carriageOrange" className="notSelected" style={child}><img src={carriageOrange} style={{ marginTop: '12px', width: '50px', height: '54px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div id="ghostOrange" className="notSelected" style={child}><img src={ghostOrange} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div id="skullOrange" className="notSelected" style={child}><img src={skullOrange} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div id="pumpkinPurple" className="notSelected" style={child}><img src={batPurple} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div id="batPurple" className="notSelected" style={child}><img src={carriagePurple} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div id="carriagePurple" className="notSelected" style={child}><img src={ghostPurple} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div id="ghostPurple" className="notSelected" style={child}><img src={pumpkinPurple} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div id="skullPurple" className="notSelected" style={child}><img src={skullPurple} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                  </HorizontalScroll>
+                <div className="tags" style={parent}>
+                    <div id="pumpkinOrange" className="tag selected" style={child}><img src={pumpkinOrange} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div id="batOrange" className="tag notSelected" style={child}><img src={batOrange} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div id="carriageOrange" className="tag notSelected" style={child}><img src={carriageOrange} style={{ marginTop: '12px', width: '50px', height: '54px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div id="ghostOrange" className="tag notSelected" style={child}><img src={ghostOrange} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div id="skullOrange" className="tag notSelected" style={child}><img src={skullOrange} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div id="pumpkinPurple" className="tag notSelected" style={child}><img src={batPurple} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div id="batPurple" className="tag notSelected" style={child}><img src={carriagePurple} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div id="carriagePurple" className="tag notSelected" style={child}><img src={ghostPurple} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div id="ghostPurple" className="tag notSelected" style={child}><img src={pumpkinPurple} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div id="skullPurple" className="tag notSelected" style={child}><img src={skullPurple} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
                 </div>
                 <p style={{
                     marginTop: '0px'

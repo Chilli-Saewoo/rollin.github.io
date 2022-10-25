@@ -24,3 +24,13 @@ input:focus {
 
 .isShown {
 }
+
+.tags {
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+}
+
+.tag {
+    
+}
