@@ -1,11 +1,11 @@
 button {
     position: relative;
-    top: -250px; 
+    top: -220px; 
     padding: 0;
     width: 88%;
     height: 56px;
     background:#FF7242;
-    margin: 22px 24px 0 24px; 
+    margin: 0 24px 0 24px; 
     font-size: 1em;
     font-weight: bold;
     border: 0px;
