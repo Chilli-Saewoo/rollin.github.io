@@ -61,6 +61,23 @@ input:focus {
     margin: 0 24px 0 24px;
 }
 
+.containerToWrite {
+    display: flex;
+    justify-content: space-between;
+}
+
+#the-count {
+    margin-right: 24px;
+    padding: 0.1rem 0 0 0;
+    font-size: 0.875rem;
+  }
+
+#current {
+    width: 21px;
+    border: none;
+    font-size: 0.80rem;
+}
+
 .fromContainer {
     position: relative;
     top: -350px;
