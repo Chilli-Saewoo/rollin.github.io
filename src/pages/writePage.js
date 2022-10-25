@@ -14,6 +14,7 @@ import pumpkinOrange from '../img/pumpkinOrange.png';
 import pumpkinPurple from '../img/pumpkinPurple.png';
 import skullOrange from '../img/skullOrange.png';
 import skullPurple from '../img/skullPurple.png';
+import pumpkinBackOrange from '../img/pumpkinBackOrange.png';
 import uuid from "react-uuid";
 import qs from "query-string";
 import HorizontalScroll from 'react-scroll-horizontal';
@@ -64,30 +65,34 @@ export class WritePage extends React.Component {
                 }}>작성할 롤링페이퍼의 스티커를 선택해주세요</p>
                 <div style={parent}>
                   <HorizontalScroll>
-                    <div class="selected" style={child}><img src={batOrange} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div className="notSelected" style={child}><img src={carriageOrange} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div className="notSelected" style={child}><img src={ghostOrange} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div className="notSelected" style={child}><img src={pumpkinOrange} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div className="notSelected" style={child}><img src={skullOrange} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div className="notSelected" style={child}><img src={batPurple} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div className="notSelected" style={child}><img src={carriagePurple} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div className="notSelected" style={child}><img src={ghostPurple} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div className="notSelected" style={child}><img src={pumpkinPurple} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div className="notSelected" style={child}><img src={skullPurple} style={{ marginTop: '12px', width: '70px', height: '78px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div className="selected" style={child}><img src={pumpkinOrange} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div className="notSelected" style={child}><img src={batOrange} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div className="notSelected" style={child}><img src={carriageOrange} style={{ marginTop: '12px', width: '50px', height: '54px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div className="notSelected" style={child}><img src={ghostOrange} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div className="notSelected" style={child}><img src={skullOrange} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div className="notSelected" style={child}><img src={batPurple} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div className="notSelected" style={child}><img src={carriagePurple} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div className="notSelected" style={child}><img src={ghostPurple} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div className="notSelected" style={child}><img src={pumpkinPurple} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div className="notSelected" style={child}><img src={skullPurple} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
                   </HorizontalScroll>
                 </div>
                 <p style={{
-                    marginTop: '36px'
+                    marginTop: '0px'
                 }}> 스티커에 적을 말을 작성해주세요</p>
-
-                <input type='text' id='sender' value={this.state.message} onChange = {e => {this.setState({message: e.target.value});}}
-                style={{ marginTop: '12px',width: '100%', height: '300px',  background: '#ff7242', border: '2px solid white'}}/>
-                <input type='text' id='sender' value={this.state.sender} onChange = {e => {this.setState({sender: e.target.value});}}
-                style={{ marginTop: '0px', width: '100%', height: '20px',  background: '#ff7242', border: '2px solid white'}}/>
+                <img src={pumpkinBackOrange} style={{ marginTop: '12px', width: '100%', height: '100%'}}></img>
+                <div style={{display: 'table', margin: 'auto', width: '100%'}}>
+                    <textarea type='text' id='sender' value={this.state.message} onChange = {e => {this.setState({message: e.target.value});}}
+                    style={{position: 'relative', top: '-350px', left: '14%', marginTop: '12px', width: '70%', height: '200px', 
+                    background: 'transparent', border: '0', maxlength: '10', fontSize: '1.25em', outlineColor: '#000000', color: '#101010'}}/>
+                    <div style={{position: 'relative', top: '-350px', left: '20%', display: 'flex', backgroundColor: 'transparent', alignItems: 'end'}}>
+                        <p style={{backgroundColor: 'transparent', color: '#202020', fontSize: '1.25em'}}>From.</p>
+                        <input type='text' id='sender' value={this.state.sender} onChange = {e => {this.setState({sender: e.target.value});}}
+                        style={{marginTop: '0px', width: '52%', height: '20px', background: 'transparent', border: '0px', borderBottom: '1px solid #202020', color: '#202020', fontSize: '1.25em'}}/>
+                    </div>
+                </div>
                 <Link to="/send">
-                    <button id = "addBtn" onClick={this.interface} style = {{ title: '완료', padding:'0px',width:'100%',height:'56px' , background:'#FF7242', marginTop:'22px',
-                     textSize: '16px', textColor: '#ffffff', fontWeight: 'bold', border: '0px', radius: '8px'
-                        }}>완료</button>
+                    <button id = "addBtn" onClick={this.interface} style = {{ title: '완료', padding:'0px', width:'100%', height:'56px', background:'#FF7242', marginTop:'22px', textize: '50px', textColor: '#000000', fontWeight: 'bold', border: '0px', radius: '8px'}}>완료</button>
                 </Link>
             </div>
         )
@@ -95,7 +100,6 @@ export class WritePage extends React.Component {
 
     interface(event) {
         const id = event.target.id;
-
         if (id == 'addBtn') {
             this.insertData();
         }

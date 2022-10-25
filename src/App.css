@@ -3,5 +3,17 @@
 }
  
 .selected {
-    
+    opacity: 1;
+}
+
+button {
+    text-size-adjust: 32px;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+input:focus {
+    outline: none;
 }
