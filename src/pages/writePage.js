@@ -27,6 +27,7 @@ import skullBackPurple from '../img/skullBackPurple.png';
 
 import uuid from "react-uuid";
 import qs from "query-string";
+import styles from '../App.css';
 
 
 export class WritePage extends React.Component {
@@ -51,9 +52,6 @@ export class WritePage extends React.Component {
     }
 
     render() {
-      const parent  = { width: '100%', height: '100px', padding: '12px 0 0 0'}
-      const child = { width: '100%', height: '100px', padding: '0 4px 0 0'}
-
       const clickSticker = event => {
         const active = document.querySelector(".selected");
         active.classList.remove("selected");
@@ -61,7 +59,7 @@ export class WritePage extends React.Component {
         const target = event.target.nodeName === "IMAGE" ? event.target : event.target.parentNode;
         target.classList.add("selected");
         target.classList.remove("notSelected");
-        const sticker = document.querySelector("#"+target.id+"Sticker");
+        const sticker = document.querySelector("#"+target.id+"Sticker_TextArea");
         const shownSticker = document.querySelector(".isShown")
         shownSticker.classList.remove("isShown")
         shownSticker.classList.add("isHidden")
@@ -71,52 +69,48 @@ export class WritePage extends React.Component {
       };
 
         return (
-            <div style={{maxWidth: '100%', overflowX: 'hidden'}}>
+            <div class='container'>
                 <p style={{
                     fontSize: '24px'
                 }}>To. 니쿠니쿠닉</p>
                 <p style={{
                     marginTop: '24px'
                 }}>작성할 롤링페이퍼의 스티커를 선택해주세요</p>
-                <div className="tags" style={parent}>
-                    <div id="pumpkinOrange" className="tag selected" style={child}><img src={pumpkinOrange} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div id="batOrange" className="tag notSelected" style={child}><img src={batOrange} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div id="carriageOrange" className="tag notSelected" style={child}><img src={carriageOrange} style={{ marginTop: '12px', width: '50px', height: '54px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div id="ghostOrange" className="tag notSelected" style={child}><img src={ghostOrange} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div id="skullOrange" className="tag notSelected" style={child}><img src={skullOrange} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div id="pumpkinPurple" className="tag notSelected" style={child}><img src={batPurple} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div id="batPurple" className="tag notSelected" style={child}><img src={carriagePurple} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div id="carriagePurple" className="tag notSelected" style={child}><img src={ghostPurple} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div id="ghostPurple" className="tag notSelected" style={child}><img src={pumpkinPurple} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div id="skullPurple" className="tag notSelected" style={child}><img src={skullPurple} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                <div className="tags">
+                    <div id="pumpkinOrange" className="tag selected"><img src={pumpkinOrange} class="sticker" onClick={clickSticker} /></div>
+                    <div id="batOrange" className="tag notSelected"><img src={batOrange} class="sticker" onClick={clickSticker} /></div>
+                    <div id="carriageOrange" className="tag notSelected"><img src={carriageOrange} class="sticker" onClick={clickSticker} /></div>
+                    <div id="ghostOrange" className="tag notSelected"><img src={ghostOrange} class="sticker" onClick={clickSticker} /></div>
+                    <div id="skullOrange" className="tag notSelected"><img src={skullOrange} class="sticker" onClick={clickSticker} /></div>
+                    <div id="pumpkinPurple" className="tag notSelected"><img src={batPurple} class="sticker" onClick={clickSticker} /></div>
+                    <div id="batPurple" className="tag notSelected"><img src={carriagePurple} class="sticker" onClick={clickSticker} /></div>
+                    <div id="carriagePurple" className="tag notSelected"><img src={ghostPurple} class="sticker" onClick={clickSticker} /></div>
+                    <div id="ghostPurple" className="tag notSelected"><img src={pumpkinPurple} class="sticker" onClick={clickSticker} /></div>
+                    <div id="skullPurple" className="tag notSelected"><img src={skullPurple} class="sticker" onClick={clickSticker} /></div>
                 </div>
                 <p style={{
                     marginTop: '0px'
                 }}> 스티커에 적을 말을 작성해주세요</p>
-                <img id="pumpkinOrangeSticker" class="sticker isShown" src={pumpkinBackOrange} style={{ marginTop: '12px', width: '100%', height: '100%'}}></img>
-                <img id="batOrangeSticker" class="sticker isHidden" src={batBackOrange} style={{ marginTop: '12px', width: '100%', height: '100%'}}></img>
-                <img id="carriageOrangeSticker" class="sticker isHidden" src={carriageBackOrange} style={{ marginTop: '12px', width: '100%', height: '100%'}}></img>
-                <img id="ghostOrangeSticker" class="sticker isHidden" src={ghostBackOrange} style={{ marginTop: '12px', width: '100%', height: '100%'}}></img>
-                <img id="skullOrangeSticker" class="sticker isHidden" src={skullBackOrange} style={{ marginTop: '12px', width: '100%', height: '100%'}}></img>
-                <img id="pumpkinPurpleSticker" class="sticker isHidden" src={pumpkinBackPurple} style={{ marginTop: '12px', width: '100%', height: '100%'}}></img>
-                <img id="batPurpleSticker" class="sticker isHidden" src={batBackPurple} style={{ marginTop: '12px', width: '100%', height: '100%'}}></img>
-                <img id="carriagePurpleSticker" class="sticker isHidden" src={carriageBackPurple} style={{ marginTop: '12px', width: '100%', height: '100%'}}></img>
-                <img id="ghostPurpleSticker" class="sticker isHidden" src={ghostBackPurple} style={{ marginTop: '12px', width: '100%', height: '100%'}}></img>
-                <img id="skullPurpleSticker" class="sticker isHidden" src={skullBackPurple} style={{ marginTop: '12px', width: '100%', height: '100%'}}></img>
+                <img id="pumpkinOrangeSticker_TextArea" class="sticker_TextArea isShown" src={pumpkinBackOrange}></img>
+                <img id="batOrangeSticker_TextArea" class="sticker_TextArea isHidden" src={batBackOrange}></img>
+                <img id="carriageOrangeSticker_TextArea" class="sticker_TextArea isHidden" src={carriageBackOrange}></img>
+                <img id="ghostOrangeSticker_TextArea" class="sticker_TextArea isHidden" src={ghostBackOrange}></img>
+                <img id="skullOrangeSticker_TextArea" class="sticker_TextArea isHidden" src={skullBackOrange}></img>
+                <img id="pumpkinPurpleSticker_TextArea" class="sticker_TextArea isHidden" src={pumpkinBackPurple}></img>
+                <img id="batPurpleSticker_TextArea" class="sticker_TextArea isHidden" src={batBackPurple}></img>
+                <img id="carriagePurpleSticker_TextArea" class="sticker_TextArea isHidden" src={carriageBackPurple}></img>
+                <img id="ghostPurpleSticker_TextArea" class="sticker_TextArea isHidden" src={ghostBackPurple}></img>
+                <img id="skullPurpleSticker_TextArea" class="sticker_TextArea isHidden" src={skullBackPurple}></img>
 
                 <div style={{display: 'table', margin: 'auto', width: '100%'}}>
-                    <textarea type='text' id='sender' value={this.state.message} onChange = {e => {this.setState({message: e.target.value});}}
-                    style={{position: 'relative', top: '-350px', left: '14%', marginTop: '12px', width: '70%', height: '200px', 
-                    background: 'transparent', border: '0', maxlength: '10', fontSize: '1.25em', outlineColor: '#000000', color: '#101010'}}/>
-                    <div style={{position: 'relative', top: '-350px', left: '20%', display: 'flex', backgroundColor: 'transparent', alignItems: 'end'}}>
-                        <p style={{backgroundColor: 'transparent', color: '#202020', fontSize: '1.25em'}}>From.</p>
-                        <input type='text' id='sender' value={this.state.sender} onChange = {e => {this.setState({sender: e.target.value});}}
-                        style={{marginTop: '0px', width: '52%', height: '20px', background: 'transparent', border: '0px', borderBottom: '1px solid #202020', color: '#202020', fontSize: '1.25em'}}/>
+                    <textarea type='text' id='sender' value={this.state.message} onChange = {e => {this.setState({message: e.target.value});}}/>
+                    <div class='fromContainer'>
+                        <p class='fromTitle'>From.</p>
+                        <input class='fromBody' type='text' id='sender' value={this.state.sender} onChange = {e => {this.setState({sender: e.target.value});}}/>
                     </div>
                 </div>
                 <Link to="/send">
-                    <button id = "addBtn" onClick={this.interface} style = {{position: 'relative', top: '-250px', title: '완료', padding:'0px', width:'100%', height:'56px', background:'#FF7242', 
-                    marginTop:'22px', fontSize: '1em', textColor: '#000000', fontWeight: 'bold', border: '0px', borderRadius: '8px'}}>완료</button>
+                    <button id = "addBtn" onClick={this.interface}>완료</button>
                 </Link>
             </div>
         )

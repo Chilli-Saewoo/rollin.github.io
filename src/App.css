@@ -6,8 +6,37 @@
     opacity: 1;
 }
 
+.container {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 button {
-    text-size-adjust: 32px;
+    position: relative;
+    top: -250px; 
+    padding: 0;
+    width: 100%;
+    height: 56px;
+    background:#FF7242;
+    margin-top: 22px; 
+    font-size: 1em;
+    font-weight: bold;
+    border: 0px;
+    border-radius: 8px;
+}
+
+textarea {
+    position: relative; 
+    top: -350px; 
+    left: 14%; 
+    margin-top: 12px; 
+    width: 70%; 
+    height: 200px; 
+    background: transparent; 
+    border: 0;
+    font-size: 1.25em; 
+    outline-color: #000000; 
+    color: #101010;
 }
 
 textarea:focus {
@@ -16,6 +45,32 @@ textarea:focus {
 
 input:focus {
     outline: none;
+}
+
+.fromContainer {
+    position: relative;
+    top: -350px;
+    left: 20%; 
+    display: flex;
+    background-color: transparent;
+    align-items: end;
+}
+
+.fromTitle {
+    background-color: transparent;
+    color: #202020;
+    font-size: 1.25em;
+}
+
+.fromBody {
+    margin-top: 0;
+    width: 52%;
+    height: 20px;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #202020;
+    color: #202020; 
+    font-size: 1.25em;
 }
 
 .isHidden {
@@ -29,8 +84,26 @@ input:focus {
     display: flex;
     align-items: center;
     overflow-x: scroll;
+    width: 100%; 
+    height: 100px; 
+    padding: 0 12px 0 0;
 }
 
 .tag {
-    
+    width: 100%; 
+    height: 100px; 
+    padding: 0 4px 0 0;
+}
+
+.sticker {
+    margin-top: 12px;
+    width: 55px;
+    height: 60px;
+    margin-left: 14px;
+}
+
+.sticker_TextArea {
+    margin-top: 12px;
+    width: 100%; 
+    height: 100%;
 }
