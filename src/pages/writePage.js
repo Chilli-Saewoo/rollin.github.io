@@ -2,12 +2,15 @@ import React from "react";
 import StartFirebase from "../firebase";
 import { ref, set, get, update, remove, child } from "firebase/database";
 import { Link } from 'react-router-dom';
-import Button from "../components/Button";
 import TextInput from "../components/TextInput";
 import styledComponents from "styled-components";
 import sticker from '../img/sticker.png';
+import uuid from "react-uuid";
+import qs from "query-string";
+
 
 export class WritePage extends React.Component {
+    
     constructor(props) {
         super(props);
         this.state = {
@@ -52,14 +55,15 @@ export class WritePage extends React.Component {
                     marginTop: '36px'
                 }}> 스티커에 적을 말을 작성해주세요</p>
 
-                <TextInput title='' width='80%' height='300px' background='#ff7242' border='2px solid white' marginTop='12px' textSize='16px'></TextInput>
-                <TextInput title='' width='80%' height='20px' background='#ff7242' border='2px solid white' marginTop='0px'></TextInput>
+                <input type='text' id='sender' value={this.state.message} onChange = {e => {this.setState({message: e.target.value});}}
+                style={{ marginTop: '12px', width: '100%', height: '300px', marginTop: '12px',  background: '#ff7242', border: '2px solid white'}}/>
+                <br></br>
+                <input type='text' id='sender' value={this.state.sender} onChange = {e => {this.setState({sender: e.target.value});}}
+                style={{ marginTop: '12px', width: '100%', height: '20px', marginTop: '0px',  background: '#ff7242', border: '2px solid white'}}/>
                 <Link to="/send">
-                    <Button title='완료' padding='0px' width='100%' height='56px' background='#FF7242' marginTop='22px'
-                        textSize='16px' textColor='#ffffff' fontWeight='bold' border='0px' radius='8px'
-                        id = "addBtn" onClick={this.interface}
-                    ></Button>
-                    <button id = "addBtn" onClick={this.interface} />
+                    <button id = "addBtn" onClick={this.interface} style = {{ title: '완료', padding:'0px',width:'100%',height:'56px' , background:'#FF7242', marginTop:'22px',
+                     textSize: '16px', textColor: '#ffffff', fontWeight: 'bold', border: '0px', radius: '8px'
+                        }}>완료</button>
                 </Link>
             </div>
         )
