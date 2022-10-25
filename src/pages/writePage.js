@@ -15,6 +15,16 @@ import pumpkinPurple from '../img/pumpkinPurple.png';
 import skullOrange from '../img/skullOrange.png';
 import skullPurple from '../img/skullPurple.png';
 import pumpkinBackOrange from '../img/pumpkinBackOrange.png';
+import batBackOrange from '../img/batBackOrange.png';
+import carriageBackOrange from '../img/carriageBackOrange.png';
+import ghostBackOrange from '../img/ghostBackOrange.png';
+import skullBackOrange from '../img/skullBackOrange.png';
+import pumpkinBackPurple from '../img/pumpkinBackPurple.png';
+import batBackPurple from '../img/batBackPurple.png';
+import carriageBackPurple from '../img/carriageBackPurple.png';
+import ghostBackPurple from '../img/ghostBackPurple.png';
+import skullBackPurple from '../img/skullBackPurple.png';
+
 import uuid from "react-uuid";
 import qs from "query-string";
 import HorizontalScroll from 'react-scroll-horizontal';
@@ -53,6 +63,13 @@ export class WritePage extends React.Component {
         const target = event.target.nodeName === "IMAGE" ? event.target : event.target.parentNode;
         target.classList.add("selected");
         target.classList.remove("notSelected");
+        const sticker = document.querySelector("#"+target.id+"Sticker");
+        const shownSticker = document.querySelector(".isShown")
+        shownSticker.classList.remove("isShown")
+        shownSticker.classList.add("isHidden")
+        sticker.classList.add("isShown")
+        sticker.classList.remove("isHidden")
+        
       };
 
         return (
@@ -65,22 +82,32 @@ export class WritePage extends React.Component {
                 }}>작성할 롤링페이퍼의 스티커를 선택해주세요</p>
                 <div style={parent}>
                   <HorizontalScroll>
-                    <div className="selected" style={child}><img src={pumpkinOrange} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div className="notSelected" style={child}><img src={batOrange} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div className="notSelected" style={child}><img src={carriageOrange} style={{ marginTop: '12px', width: '50px', height: '54px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div className="notSelected" style={child}><img src={ghostOrange} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div className="notSelected" style={child}><img src={skullOrange} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div className="notSelected" style={child}><img src={batPurple} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div className="notSelected" style={child}><img src={carriagePurple} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div className="notSelected" style={child}><img src={ghostPurple} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div className="notSelected" style={child}><img src={pumpkinPurple} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
-                    <div className="notSelected" style={child}><img src={skullPurple} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div id="pumpkinOrange" className="selected" style={child}><img src={pumpkinOrange} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div id="batOrange" className="notSelected" style={child}><img src={batOrange} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div id="carriageOrange" className="notSelected" style={child}><img src={carriageOrange} style={{ marginTop: '12px', width: '50px', height: '54px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div id="ghostOrange" className="notSelected" style={child}><img src={ghostOrange} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div id="skullOrange" className="notSelected" style={child}><img src={skullOrange} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div id="pumpkinPurple" className="notSelected" style={child}><img src={batPurple} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div id="batPurple" className="notSelected" style={child}><img src={carriagePurple} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div id="carriagePurple" className="notSelected" style={child}><img src={ghostPurple} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div id="ghostPurple" className="notSelected" style={child}><img src={pumpkinPurple} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
+                    <div id="skullPurple" className="notSelected" style={child}><img src={skullPurple} style={{ marginTop: '12px', width: '50px', height: '55px', marginLeft: '14px' }} onClick={clickSticker} /></div>
                   </HorizontalScroll>
                 </div>
                 <p style={{
                     marginTop: '0px'
                 }}> 스티커에 적을 말을 작성해주세요</p>
-                <img src={pumpkinBackOrange} style={{ marginTop: '12px', width: '100%', height: '100%'}}></img>
+                <img id="pumpkinOrangeSticker" class="sticker isShown" src={pumpkinBackOrange} style={{ marginTop: '12px', width: '100%', height: '100%'}}></img>
+                <img id="batOrangeSticker" class="sticker isHidden" src={batBackOrange} style={{ marginTop: '12px', width: '100%', height: '100%'}}></img>
+                <img id="carriageOrangeSticker" class="sticker isHidden" src={carriageBackOrange} style={{ marginTop: '12px', width: '100%', height: '100%'}}></img>
+                <img id="ghostOrangeSticker" class="sticker isHidden" src={ghostBackOrange} style={{ marginTop: '12px', width: '100%', height: '100%'}}></img>
+                <img id="skullOrangeSticker" class="sticker isHidden" src={skullBackOrange} style={{ marginTop: '12px', width: '100%', height: '100%'}}></img>
+                <img id="pumpkinPurpleSticker" class="sticker isHidden" src={pumpkinBackPurple} style={{ marginTop: '12px', width: '100%', height: '100%'}}></img>
+                <img id="batPurpleSticker" class="sticker isHidden" src={batBackPurple} style={{ marginTop: '12px', width: '100%', height: '100%'}}></img>
+                <img id="carriagePurpleSticker" class="sticker isHidden" src={carriageBackPurple} style={{ marginTop: '12px', width: '100%', height: '100%'}}></img>
+                <img id="ghostPurpleSticker" class="sticker isHidden" src={ghostBackPurple} style={{ marginTop: '12px', width: '100%', height: '100%'}}></img>
+                <img id="skullPurpleSticker" class="sticker isHidden" src={skullBackPurple} style={{ marginTop: '12px', width: '100%', height: '100%'}}></img>
+
                 <div style={{display: 'table', margin: 'auto', width: '100%'}}>
                     <textarea type='text' id='sender' value={this.state.message} onChange = {e => {this.setState({message: e.target.value});}}
                     style={{position: 'relative', top: '-350px', left: '14%', marginTop: '12px', width: '70%', height: '200px', 
