@@ -14,7 +14,7 @@ button {
 
 textarea {
     position: relative; 
-    top: -350px; 
+    top: -320px; 
     left: 14%; 
     margin-top: 12px; 
     width: 70%; 
@@ -81,7 +81,7 @@ input:focus {
 
 .fromContainer {
     position: relative;
-    top: -350px;
+    top: -330px;
     left: 20%; 
     display: flex;
     background-color: transparent;
