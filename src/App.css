@@ -76,6 +76,7 @@ input:focus {
     width: 21px;
     border: none;
     font-size: 0.80rem;
+    text-align: right;
 }
 
 .fromContainer {
