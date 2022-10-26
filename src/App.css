@@ -1,0 +1,147 @@
+button {
+    position: relative;
+    top: -220px; 
+    padding: 0;
+    width: 88%;
+    height: 56px;
+    background:#FF7242;
+    margin: 0 24px 0 24px; 
+    font-size: 1em;
+    font-weight: bold;
+    border: 0px;
+    border-radius: 8px;
+}
+
+textarea {
+    position: relative; 
+    top: -320px; 
+    left: 14%; 
+    margin-top: 12px; 
+    width: 70%; 
+    height: 180px; 
+    background: transparent; 
+    border: 0;
+    font-size: 1.25em; 
+    outline-color: #000000; 
+    color: #101010;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+.notSelected {
+    opacity: 0.3;
+}
+ 
+.selected {
+    opacity: 1;
+}
+
+.container {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.title {
+    font-size: 24px;
+    margin: 24px 24px 0 24px;
+}
+
+.titleToSelect {
+    margin: 24px 24px 0 24px;
+
+}
+
+.titleToWrite {
+    margin: 0 24px 0 24px;
+}
+
+.containerToWrite {
+    display: flex;
+    justify-content: space-between;
+}
+
+#the-count {
+    margin-right: 24px;
+    padding: 0.1rem 0 0 0;
+    font-size: 0.875rem;
+  }
+
+#current {
+    width: 21px;
+    border: none;
+    font-size: 0.80rem;
+    text-align: right;
+}
+
+.fromContainer {
+    position: relative;
+    top: -330px;
+    left: 20%; 
+    display: flex;
+    background-color: transparent;
+    align-items: end;
+}
+
+.fromTitle {
+    background-color: transparent;
+    color: #202020;
+    font-size: 1.25em;
+}
+
+.fromBody {
+    margin-top: 0;
+    width: 46%;
+    height: 20px;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #202020;
+    border-radius: 0;
+    color: #202020; 
+    font-size: 1.25em;
+    text-align: right;
+}
+
+.isHidden {
+    display: none;
+}
+
+.isShown {
+}
+
+.tags {
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+    width: 100%;
+    height: 100px; 
+    padding: 0 24px 0 0;
+    margin: 0px 0 0 12px;
+}
+
+.tag {
+    width: 100%; 
+    height: 100px; 
+    padding: 0 4px 0 0;
+}
+
+.sticker {
+    margin: 12px 0 0 12px;
+    width: 62px;
+    height: 67px;
+}
+
+.lastSticker {
+    margin-right: 24px;
+}
+
+.sticker_TextArea {
+    margin: 12px 24px 0 24px;
+    width: 88%; 
+    height: 100%;
+}
