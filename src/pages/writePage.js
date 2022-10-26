@@ -1,6 +1,6 @@
 import React from "react";
 import StartFirebase from "../firebase";
-import { ref, set, get, update, remove, child } from "firebase/database";
+import { ref, set, get, push, update, remove, child, getDatabase, onValue } from "firebase/database";
 import { Link } from 'react-router-dom';
 import TextInput from "../components/TextInput";
 import styledComponents from "styled-components";
@@ -37,7 +37,7 @@ export class WritePage extends React.Component {
         this.state = {
             db: ' ',
             // UUID: ' ',
-            // image: ' ',
+            image: ' ',
             // nickname: ' ',
             message: ' ',
             sender: ' '
@@ -69,7 +69,7 @@ export class WritePage extends React.Component {
         const stickerTextarea = document.querySelector("textarea")
         const fromTextContainer = document.querySelector(".fromContainer")
         if (target.id =="pumpkinOrange" || target.id =="pumpkinPurple") {
-            stickerTextarea.setAttribute("style", "top: -345px")
+            stickerTextarea.setAttribute("style", "top: -320px")
             fromTextContainer.setAttribute("style", "top: -345px")
         } else if (target.id == "batOrange" || target.id == "batPurple") {
             stickerTextarea.setAttribute("style", "top: -290px")
@@ -88,6 +88,14 @@ export class WritePage extends React.Component {
         }
       };
 
+      const db = StartFirebase();
+        const link = document.location.href.split("=");
+        const startCountRef = ref(db, 'users/' + link[1] + '/nickname');
+        var data
+        onValue(startCountRef, (snapshot) => {
+            data = snapshot.val();
+        });
+
       const calcText = () => {
         const current = document.querySelector('#current');
         const stickerTextarea = document.querySelector("textarea")
@@ -98,7 +106,7 @@ export class WritePage extends React.Component {
 
         return (
             <div class='container'>
-                <p class="title">To. 니쿠니쿠닉</p>
+                <p class="title">To. {data}</p>
                 <p class="titleToSelect">작성할 롤링페이퍼의 스티커를 선택해주세요</p>
                 <div className="tags">
                     <div id="pumpkinOrange" className="tag selected"><img src={pumpkinOrange} class="sticker" onClick={clickSticker} /></div>
@@ -164,17 +172,15 @@ export class WritePage extends React.Component {
     insertData() {
         const db = this.state.db;
         const data = this.getAllInputs();
+        const date = new Date().toUTCString();
+        let link = document.location.href.split("=");
 
-        update(ref(db, 'users/' + 'AC40BE25-BC94-421A-AB65-76491835F24A'),
+        push(ref(db, 'users/' + link[1] + '/notes'),
             {
-                notes: {
-                    UUID: {
-                        // image: data.image,
-                        message: data.message,
-                        sender: data.sender,
-                        // timestamp: data.timestamp
-                    }
-                }
+                image: document.querySelector(".selected").id,
+                message: data.message,
+                sender: data.sender,
+                timestamp: date
             }).then(() => { alert('데이터 추가 완료') })
             .catch((error) => { alert("데이터 추가 에러" + error) });
     }

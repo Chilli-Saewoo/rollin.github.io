@@ -100,8 +100,10 @@ input:focus {
     background: transparent;
     border: 0;
     border-bottom: 1px solid #202020;
+    border-radius: 0;
     color: #202020; 
     font-size: 1.25em;
+    text-align: right;
 }
 
 .isHidden {
@@ -115,7 +117,7 @@ input:focus {
     display: flex;
     align-items: center;
     overflow-x: scroll;
-    width: 100%; 
+    width: 100%;
     height: 100px; 
     padding: 0 24px 0 0;
     margin: 0px 0 0 12px;
