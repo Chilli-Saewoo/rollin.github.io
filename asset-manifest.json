@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/rollin.github.io/static/css/main.061157e8.css",
-    "main.js": "/rollin.github.io/static/js/main.a481d877.js",
+    "main.js": "/rollin.github.io/static/js/main.42847428.js",
     "static/media/ghostBackPurple.png": "/rollin.github.io/static/media/ghostBackPurple.4ebac64262931939e47d.png",
     "static/media/carriageBackPurple.png": "/rollin.github.io/static/media/carriageBackPurple.8873de293e1854ca8aad.png",
     "static/media/ghostPurple.png": "/rollin.github.io/static/media/ghostPurple.88b752ae7a136222d7a8.png",
@@ -25,10 +25,10 @@
     "static/media/Finish.png": "/rollin.github.io/static/media/Finish.a1b190f2869a96077396.png",
     "index.html": "/rollin.github.io/index.html",
     "main.061157e8.css.map": "/rollin.github.io/static/css/main.061157e8.css.map",
-    "main.a481d877.js.map": "/rollin.github.io/static/js/main.a481d877.js.map"
+    "main.42847428.js.map": "/rollin.github.io/static/js/main.42847428.js.map"
   },
   "entrypoints": [
     "static/css/main.061157e8.css",
-    "static/js/main.a481d877.js"
+    "static/js/main.42847428.js"
   ]
 }
