@@ -161,6 +161,7 @@ input:focus {
     display: block;
     margin: auto;
     margin-top: 120px;
+    width: 210px;
 }
 
 .result__text {
