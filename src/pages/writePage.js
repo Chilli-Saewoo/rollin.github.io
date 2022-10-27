@@ -107,7 +107,7 @@ export class WritePage extends React.Component {
       };
 
         return (
-            <div class='container'>
+            <div class='write__container'>
                 <p class="title">To. {data}</p>
                 <p class="titleToSelect">작성할 롤링페이퍼의 스티커를 선택해주세요</p>
                 <div className="tags">
@@ -148,7 +148,7 @@ export class WritePage extends React.Component {
                     </div>
                 </div>
                 <Link to="/send">
-                    <button id = "addBtn" onClick={this.interface}>완료</button>
+                    <button id = "addBtn" class="button__write" onClick={this.interface}>완료</button>
                 </Link>
             </div>
         )

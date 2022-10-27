@@ -1,4 +1,4 @@
-button {
+.button__write {
     position: relative;
     top: -220px; 
     padding: 0;
@@ -34,6 +34,8 @@ input:focus {
     outline: none;
 }
 
+/* Write CSS */
+
 .notSelected {
     opacity: 0.3;
 }
@@ -42,7 +44,7 @@ input:focus {
     opacity: 1;
 }
 
-.container {
+.write__container {
     max-width: 100%;
     overflow-x: hidden;
 }
@@ -144,4 +146,44 @@ input:focus {
     margin: 12px 24px 0 24px;
     width: 88%; 
     height: 100%;
+}
+
+
+/* Send CSS */
+.send__container {
+    max-height: 100%;
+    overflow-y: hidden;
+}
+
+.result__image {
+    text-align: center;
+    display: block;
+    margin: auto;
+    margin-top: 120px;
+}
+
+.result__text {
+    margin-top: 84px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+.result__description {
+    margin-top: 180px;
+    font-size: 12px;
+    text-align: center;
+    color: #FF8961;
+}
+
+.input__testFilght {
+    padding: 0;
+    width: 88%;
+    height: 56px;
+    background:#FF7242;
+    margin: 11px 24px 0 24px; 
+    font-size: 1em;
+    font-weight: bold;
+    border: 0px;
+    border-radius: 8px;
 }
