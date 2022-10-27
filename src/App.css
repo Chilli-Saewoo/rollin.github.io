@@ -161,18 +161,19 @@ input:focus {
     display: block;
     margin: auto;
     margin-top: 120px;
+    width: 210px;
 }
 
 .result__text {
     margin-top: 84px;
     text-align: center;
-    font-size: 20px;
+    font-size: 22px;
     line-height: 1.8;
 }
 
 .result__description {
     margin-top: 180px;
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
     color: #FF8961;
 }

@@ -56,7 +56,44 @@ export class WritePage extends React.Component {
         const target = event.target.nodeName === "IMAGE" ? event.target : event.target.parentNode;
         target.classList.add("selected");
         target.classList.remove("notSelected");
-        const sticker = document.querySelector("#"+target.id+"Sticker_TextArea");
+        let stickerName
+        switch (target.id) {
+            case '1':
+                stickerName = "pumpkinOrange";
+                break;
+            case '2':
+                stickerName = "pumpkinPurple";
+                break;                
+            case '3':
+                stickerName = "batOrange";
+                break;
+            case '4':
+                stickerName = "batPurple";
+                break;
+            case '5':
+                stickerName = "carriageOrange";
+                break;
+            case '6':
+                stickerName = "carriagePurple";
+                break;                
+            case '7':
+                stickerName = "ghostOrange";
+                break;
+            case '8':
+                stickerName = "ghostPurple";
+                break;
+            case '9':
+                stickerName = "skullOrange";
+                break;
+            case '10':
+                stickerName = "skullPurple";
+                break;   
+            default:
+                break;
+        }
+
+        console.log(stickerName);
+        const sticker = document.querySelector("#"+stickerName+"Sticker_TextArea");
         const shownSticker = document.querySelector(".isShown")
         shownSticker.classList.remove("isShown")
         shownSticker.classList.add("isHidden")
@@ -65,21 +102,21 @@ export class WritePage extends React.Component {
         
         const stickerTextarea = document.querySelector("textarea")
         const fromTextContainer = document.querySelector(".fromContainer")
-        if (target.id =="pumpkinOrange" || target.id =="pumpkinPurple") {
+        if (target.id =="1" || target.id =="2") {
             stickerTextarea.setAttribute("style", "top: -320px")
             fromTextContainer.setAttribute("style", "top: -330px")
-        } else if (target.id == "batOrange" || target.id == "batPurple") {
+        } else if (target.id == "3" || target.id == "4") {
             stickerTextarea.setAttribute("style", "top: -290px")
             fromTextContainer.setAttribute("style", "top: -290px")
-        } else if (target.id == "carriageOrange" || target.id == "carriagePurple") {
+        } else if (target.id == "5" || target.id == "6") {
             stickerTextarea.setAttribute("style", "top: -280px")
             stickerTextarea.style.width = "65%";
             stickerTextarea.style.fontSize = '1.2em';
             fromTextContainer.setAttribute("style", "top: -290px")
-        } else if (target.id == "ghostOrange" || target.id == "ghostPurple") {
+        } else if (target.id == "7" || target.id == "8") {
             stickerTextarea.setAttribute("style", "top: -280px")
             fromTextContainer.setAttribute("style", "top: -280px")
-        } else if (target.id == "skullOrange" || target.id == "skullPurple") {
+        } else if (target.id == "9" || target.id == "10") {
             
             stickerTextarea.setAttribute("style", "top: -210px")
             stickerTextarea.style.fontSize = '1.15em';
@@ -116,12 +153,12 @@ export class WritePage extends React.Component {
                 <div className="tags">
                     <div id="1" className="tag selected"><img src={pumpkinOrange} class="sticker" onClick={clickSticker} /></div>
                     <div id="2" className="tag notSelected"><img src={pumpkinPurple} class="sticker" onClick={clickSticker} /></div>
-                    <div id="3" className="tag notSelected"><img src={batOrange} class="sticker" onClick={clickSticker} /></div>
-                    <div id="4" className="tag notSelected"><img src={batPurple} class="sticker" onClick={clickSticker} /></div>
-                    <div id="5" className="tag notSelected"><img src={carriageOrange} class="sticker" onClick={clickSticker} /></div>
-                    <div id="6" className="tag notSelected"><img src={carriagePurple} class="sticker" onClick={clickSticker} /></div>
-                    <div id="7" className="tag notSelected"><img src={ghostOrange} class="sticker" onClick={clickSticker} /></div>
-                    <div id="8" className="tag notSelected"><img src={ghostPurple} class="sticker" onClick={clickSticker} /></div>
+                    <div id="3" className="tag notSelected"><img src={batOrange} class="sticker" style={{width: "58px"}} onClick={clickSticker} /></div>
+                    <div id="4" className="tag notSelected"><img src={batPurple} class="sticker" style={{width: "58px"}} onClick={clickSticker} /></div>
+                    <div id="5" className="tag notSelected"><img src={carriageOrange} class="sticker" style={{width: "68px"}} onClick={clickSticker} /></div>
+                    <div id="6" className="tag notSelected"><img src={carriagePurple} class="sticker" style={{width: "68px"}} onClick={clickSticker} /></div>
+                    <div id="7" className="tag notSelected"><img src={ghostOrange} class="sticker" style={{width: "68px"}} onClick={clickSticker} /></div>
+                    <div id="8" className="tag notSelected"><img src={ghostPurple} class="sticker" style={{width: "68px"}} onClick={clickSticker} /></div>
                     <div id="9" className="tag notSelected"><img src={skullOrange} class="sticker" onClick={clickSticker} /></div>
                     <div id="10" className="tag notSelected"><img src={skullPurple} class="sticker lastSticker" onClick={clickSticker} /></div>            
                 </div>
