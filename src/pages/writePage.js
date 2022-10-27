@@ -153,12 +153,12 @@ export class WritePage extends React.Component {
                 <div className="tags">
                     <div id="1" className="tag selected"><img src={pumpkinOrange} class="sticker" onClick={clickSticker} /></div>
                     <div id="2" className="tag notSelected"><img src={pumpkinPurple} class="sticker" onClick={clickSticker} /></div>
-                    <div id="3" className="tag notSelected"><img src={batOrange} class="sticker" onClick={clickSticker} /></div>
-                    <div id="4" className="tag notSelected"><img src={batPurple} class="sticker" onClick={clickSticker} /></div>
-                    <div id="5" className="tag notSelected"><img src={carriageOrange} class="sticker" onClick={clickSticker} /></div>
-                    <div id="6" className="tag notSelected"><img src={carriagePurple} class="sticker" onClick={clickSticker} /></div>
-                    <div id="7" className="tag notSelected"><img src={ghostOrange} class="sticker" onClick={clickSticker} /></div>
-                    <div id="8" className="tag notSelected"><img src={ghostPurple} class="sticker" onClick={clickSticker} /></div>
+                    <div id="3" className="tag notSelected"><img src={batOrange} class="sticker" style={{width: "58px"}} onClick={clickSticker} /></div>
+                    <div id="4" className="tag notSelected"><img src={batPurple} class="sticker" style={{width: "58px"}} onClick={clickSticker} /></div>
+                    <div id="5" className="tag notSelected"><img src={carriageOrange} class="sticker" style={{width: "68px"}} onClick={clickSticker} /></div>
+                    <div id="6" className="tag notSelected"><img src={carriagePurple} class="sticker" style={{width: "68px"}} onClick={clickSticker} /></div>
+                    <div id="7" className="tag notSelected"><img src={ghostOrange} class="sticker" style={{width: "68px"}} onClick={clickSticker} /></div>
+                    <div id="8" className="tag notSelected"><img src={ghostPurple} class="sticker" style={{width: "68px"}} onClick={clickSticker} /></div>
                     <div id="9" className="tag notSelected"><img src={skullOrange} class="sticker" onClick={clickSticker} /></div>
                     <div id="10" className="tag notSelected"><img src={skullPurple} class="sticker lastSticker" onClick={clickSticker} /></div>            
                 </div>
