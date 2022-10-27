@@ -207,8 +207,8 @@ export class WritePage extends React.Component {
                 message: data.message,
                 sender: data.sender,
                 timestamp: date
-            }).then(() => { alert('데이터 추가 완료') })
-            .catch((error) => { alert("데이터 추가 에러" + error) });
+            }).then(() => { })
+            .catch((error) => { });
     }
 
 }
