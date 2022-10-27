@@ -28,6 +28,7 @@ import skullBackPurple from '../img/skullBackPurple.png';
 import uuid from "react-uuid";
 import qs from "query-string";
 import styles from '../App.css';
+import Delayed from "../renderDelay";
 
 
 export class WritePage extends React.Component {
@@ -40,18 +41,14 @@ export class WritePage extends React.Component {
             image: ' ',
             // nickname: ' ',
             message: ' ',
-            sender: ' '
-        }
+            sender: ' ',
+            date: new Date()
+        };
         this.interface = this.interface.bind(this)
     }
 
-    componentDidMount() {
-        this.setState({
-            db: StartFirebase()
-        });
-    }
-
     render() {
+        
       const clickSticker = event => {
         const active = document.querySelector(".selected");
         active.classList.remove("selected");
@@ -90,13 +87,6 @@ export class WritePage extends React.Component {
         }
       };
 
-      const db = StartFirebase();
-        const link = document.location.href.split("=");
-        const startCountRef = ref(db, 'users/' + link[1] + '/nickname');
-        var data
-        onValue(startCountRef, (snapshot) => {
-            data = snapshot.val();
-        });
 
       const calcText = () => {
         const current = document.querySelector('#current');
@@ -106,8 +96,23 @@ export class WritePage extends React.Component {
         current.value = stickerTextarea.value.length
       };
 
+      const db = StartFirebase();
+        const link = document.location.href.split("=");
+        const startCountRef = ref(db, 'users/' + link[1] + '/nickname');
+        const linkToSend = "/send/id=" + link[1]
+        var data
+        onValue(startCountRef, (snapshot) => {
+            data = snapshot.val();
+            console.log(link[1])
+        });
+
+
+
         return (
-            <div class='container'>
+            <Delayed>
+            <div>
+                
+                <div class='container'>
                 <p class="title">To. {data}</p>
                 <p class="titleToSelect">작성할 롤링페이퍼의 스티커를 선택해주세요</p>
                 <div className="tags">
@@ -147,11 +152,32 @@ export class WritePage extends React.Component {
                         <input class='fromBody' type='text' id='sender' value={this.state.sender} onChange = {e => {this.setState({sender: e.target.value});}}/>
                     </div>
                 </div>
-                <Link to="/send">
+                <Link to={linkToSend}>
                     <button id = "addBtn" onClick={this.interface}>완료</button>
                 </Link>
+                </div>
             </div>
+            </Delayed>
         )
+    }
+
+    startInterval() {
+        let delay;
+        if (this.props.isPrecise) {
+          delay = 100;
+        } else {
+          delay = 1000;
+        }
+        this.intervalID = setInterval(() => {
+          this.setState({ date: new Date() });
+        }, delay);
+      }
+
+    componentDidMount() {
+        this.startInterval();
+        this.setState({
+            db: StartFirebase()
+        });       
     }
 
     interface(event) {
@@ -187,37 +213,4 @@ export class WritePage extends React.Component {
             .catch((error) => { alert("데이터 추가 에러" + error) });
     }
 
-    selectData() {
-        const dbref = ref(this.state.db);
-        const UUID = this.getAllInputs().UUID;
-
-        get(child(dbref, 'users/' + UUID)).then((snapshot) => {
-            if (snapshot.exists()) {
-                this.setState({
-                    // image: this.state.image,
-                    message: this.state.message,
-                    sender: this.state.sender,
-                    // timestamp: this.state.timestamp
-                })
-            }
-
-            else {
-                alert("no data found!");
-            }
-        })
-            .catch((error) => { alert("there was an error , details" + error) })
-    }
-
 }
-const Contanier = styledComponents.div`
-	background-color : #f6a58d;
-`;
-
-const Text = styledComponents.div`
-    font-size:20px;
-	font-weight:600;
-`;
-
-
-
-// url/write?id=sldfsdlkUUID
