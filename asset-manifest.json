@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/rollin.github.io/write/static/css/main.7ad7feec.css",
-    "main.js": "/rollin.github.io/write/static/js/main.7ef683c4.js",
+    "main.css": "/rollin.github.io/write/static/css/main.061157e8.css",
+    "main.js": "/rollin.github.io/write/static/js/main.70439baa.js",
     "static/media/ghostBackPurple.png": "/rollin.github.io/write/static/media/ghostBackPurple.4ebac64262931939e47d.png",
     "static/media/carriageBackPurple.png": "/rollin.github.io/write/static/media/carriageBackPurple.8873de293e1854ca8aad.png",
     "static/media/ghostPurple.png": "/rollin.github.io/write/static/media/ghostPurple.88b752ae7a136222d7a8.png",
@@ -22,12 +22,13 @@
     "static/media/batBackOrange.png": "/rollin.github.io/write/static/media/batBackOrange.1e2961ac5ca80db400fb.png",
     "static/media/pumpkinOrange.png": "/rollin.github.io/write/static/media/pumpkinOrange.5713beff41e2dd34bc26.png",
     "static/media/pumpkinBackOrange.png": "/rollin.github.io/write/static/media/pumpkinBackOrange.d41329db6ae3b7de6055.png",
+    "static/media/Finish.png": "/rollin.github.io/write/static/media/Finish.a1b190f2869a96077396.png",
     "index.html": "/rollin.github.io/write/index.html",
-    "main.7ad7feec.css.map": "/rollin.github.io/write/static/css/main.7ad7feec.css.map",
-    "main.7ef683c4.js.map": "/rollin.github.io/write/static/js/main.7ef683c4.js.map"
+    "main.061157e8.css.map": "/rollin.github.io/write/static/css/main.061157e8.css.map",
+    "main.70439baa.js.map": "/rollin.github.io/write/static/js/main.70439baa.js.map"
   },
   "entrypoints": [
-    "static/css/main.7ad7feec.css",
-    "static/js/main.7ef683c4.js"
+    "static/css/main.061157e8.css",
+    "static/js/main.70439baa.js"
   ]
 }
