@@ -91,8 +91,6 @@ export class WritePage extends React.Component {
       const calcText = () => {
         const current = document.querySelector('#current');
         const stickerTextarea = document.querySelector("textarea")
-        console.log(current.value)
-        console.log(stickerTextarea)
         current.value = stickerTextarea.value.length
       };
 
@@ -112,20 +110,20 @@ export class WritePage extends React.Component {
             <Delayed>
             <div>
                 
-                <div class='container'>
+            <div class='write__container'>
                 <p class="title">To. {data}</p>
                 <p class="titleToSelect">작성할 롤링페이퍼의 스티커를 선택해주세요</p>
                 <div className="tags">
-                    <div id="pumpkinOrange" className="tag selected"><img src={pumpkinOrange} class="sticker" onClick={clickSticker} /></div>
-                    <div id="pumpkinPurple" className="tag notSelected"><img src={pumpkinPurple} class="sticker" onClick={clickSticker} /></div>
-                    <div id="batOrange" className="tag notSelected"><img src={batOrange} class="sticker" onClick={clickSticker} /></div>
-                    <div id="batPurple" className="tag notSelected"><img src={batPurple} class="sticker" onClick={clickSticker} /></div>
-                    <div id="carriageOrange" className="tag notSelected"><img src={carriageOrange} class="sticker" onClick={clickSticker} /></div>
-                    <div id="carriagePurple" className="tag notSelected"><img src={carriagePurple} class="sticker" onClick={clickSticker} /></div>
-                    <div id="ghostOrange" className="tag notSelected"><img src={ghostOrange} class="sticker" onClick={clickSticker} /></div>
-                    <div id="ghostPurple" className="tag notSelected"><img src={ghostPurple} class="sticker" onClick={clickSticker} /></div>
-                    <div id="skullOrange" className="tag notSelected"><img src={skullOrange} class="sticker" onClick={clickSticker} /></div>
-                    <div id="skullPurple" className="tag notSelected"><img src={skullPurple} class="sticker lastSticker" onClick={clickSticker} /></div>            
+                    <div id="1" className="tag selected"><img src={pumpkinOrange} class="sticker" onClick={clickSticker} /></div>
+                    <div id="2" className="tag notSelected"><img src={pumpkinPurple} class="sticker" onClick={clickSticker} /></div>
+                    <div id="3" className="tag notSelected"><img src={batOrange} class="sticker" onClick={clickSticker} /></div>
+                    <div id="4" className="tag notSelected"><img src={batPurple} class="sticker" onClick={clickSticker} /></div>
+                    <div id="5" className="tag notSelected"><img src={carriageOrange} class="sticker" onClick={clickSticker} /></div>
+                    <div id="6" className="tag notSelected"><img src={carriagePurple} class="sticker" onClick={clickSticker} /></div>
+                    <div id="7" className="tag notSelected"><img src={ghostOrange} class="sticker" onClick={clickSticker} /></div>
+                    <div id="8" className="tag notSelected"><img src={ghostPurple} class="sticker" onClick={clickSticker} /></div>
+                    <div id="9" className="tag notSelected"><img src={skullOrange} class="sticker" onClick={clickSticker} /></div>
+                    <div id="10" className="tag notSelected"><img src={skullPurple} class="sticker lastSticker" onClick={clickSticker} /></div>            
                 </div>
                 <div class="containerToWrite">
                     <span class="titleToWrite"> 스티커에 적을 말을 작성해주세요</span> 
@@ -153,7 +151,7 @@ export class WritePage extends React.Component {
                     </div>
                 </div>
                 <Link to={linkToSend}>
-                    <button id = "addBtn" onClick={this.interface}>완료</button>
+                    <button id = "addBtn" class="button__write" onClick={this.interface}>완료</button>
                 </Link>
                 </div>
             </div>
@@ -205,12 +203,12 @@ export class WritePage extends React.Component {
 
         push(ref(db, 'users/' + link[1] + '/notes'),
             {
-                image: document.querySelector(".selected").id,
+                image: parseInt(document.querySelector(".selected").id),
                 message: data.message,
                 sender: data.sender,
                 timestamp: date
-            }).then(() => { alert('데이터 추가 완료') })
-            .catch((error) => { alert("데이터 추가 에러" + error) });
+            }).then(() => { })
+            .catch((error) => { });
     }
 
 }
