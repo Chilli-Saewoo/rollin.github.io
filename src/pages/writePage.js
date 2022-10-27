@@ -147,7 +147,7 @@ export class WritePage extends React.Component {
                     <textarea maxLength={100} type='text' id='sender' value={this.state.message} onChange = {e => {this.setState({message: e.target.value});}} onKeyDown = {calcText} onKeyUp = {calcText}/>
                     <div class='fromContainer'>
                         <p class='fromTitle'>From.</p>
-                        <input class='fromBody' type='text' id='sender' value={this.state.sender} onChange = {e => {this.setState({sender: e.target.value});}}/>
+                        <input maxLength={10} class='fromBody' type='text' id='sender' value={this.state.sender} onChange = {e => {this.setState({sender: e.target.value});}}/>
                     </div>
                 </div>
                 <Link to={linkToSend}>
@@ -190,7 +190,7 @@ export class WritePage extends React.Component {
 
     getAllInputs() {
         return {
-            message: this.state.message,
+            message: this.state.message.replaceAll(/(\n|\r\n)/g, " "),
             sender: this.state.sender
         }
     }
