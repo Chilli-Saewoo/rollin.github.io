@@ -91,8 +91,6 @@ export class WritePage extends React.Component {
       const calcText = () => {
         const current = document.querySelector('#current');
         const stickerTextarea = document.querySelector("textarea")
-        console.log(current.value)
-        console.log(stickerTextarea)
         current.value = stickerTextarea.value.length
       };
 

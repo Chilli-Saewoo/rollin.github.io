@@ -13,7 +13,6 @@ const SendPage = () => {
         var data
         onValue(startCountRef, (snapshot) => {
             data = snapshot.val();
-            console.log(link[1])
         });
 
   return (
