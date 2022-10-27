@@ -153,7 +153,7 @@ export class WritePage extends React.Component {
                     </div>
                 </div>
                 <Link to={linkToSend}>
-                    <button id = "addBtn" onClick={this.interface}>완료</button>
+                    <button id = "addBtn" class="button__write" onClick={this.interface}>완료</button>
                 </Link>
                 </div>
             </div>
